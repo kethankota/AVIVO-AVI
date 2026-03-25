@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: avivo_bot
+    env_file: .env
+    environment:
+      - OLLAMA_HOST=http://172.16.2.122:11434 
+    restart: unless-stopped
+
