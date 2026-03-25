@@ -152,6 +152,7 @@ Both models are served by a shared **Ollama** instance (HTTP API on port 11434).
 
 ```
 Avivo_docker_final/
+├── README.md               # Read me document for the project
 ├── app.py                  # Bot entry point; registers all handlers
 ├── requirements.txt        # Pinned Python dependencies
 ├── Dockerfile              # Multi-stage slim image
@@ -161,6 +162,10 @@ Avivo_docker_final/
 ├── bot/
 │   ├── handlers.py         # Telegram command handlers (ask, image, help, summarize)
 │   └── router.py           # Dispatches to RAG or vision; applies cache
+│
+├── bot/                    # Contain the RAG and Vision routers and handler
+│
+├── miscellaneous/          # Contain system design diagram, sample input and  tested output images
 │
 ├── rag/
 │   ├── ingest.py           # One-time doc chunking + embedding → SQLite
