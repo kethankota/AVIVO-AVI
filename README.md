@@ -195,6 +195,7 @@ Avivo_docker_final/
 - Ollama running and accessible (can be on the host machine or a remote server). Ensure the ollama url and port mentioned is .env file is pointed correctly.
 - Models pulled on the Ollama host: `ollama pull mistral:7b && ollama pull llava:7b`
 - A Telegram bot token from [@BotFather](https://t.me/BotFather) - is needed to have a working bot. Modify the .env values as per need. 
+- for the documents provided as part of the artifacts, refer to `data` folder. sample question for these documents provided in [Bot Commands]
 ### Steps
 
 ```bash
@@ -260,10 +261,9 @@ Bot:  The Apache License 2.0 allows you to freely use, modify, and distribute
 
 You:  /image
 Bot:  📸 Please upload the image you'd like me to summarize.
-You:  [uploads photo of a mountain lake]
-Bot:  Caption: A serene mountain lake reflects snow-capped peaks under a clear
-      blue sky. A dense pine forest lines the shoreline in the foreground.
-      Tags: nature, mountain, reflection
+You:  [uploads photo of a lake]
+Bot:  Caption: A serene scene of a pathway leading to a lake with trees and clear skies in the background.
+      Tags: nature, outdoors, lake
 ```
 
 ---
