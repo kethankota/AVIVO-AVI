@@ -194,7 +194,7 @@ Avivo_docker_final/
 - Docker Desktop (or Docker Engine + Compose v2)
 - Ollama running and accessible (can be on the host machine or a remote server). Ensure the ollama url and port mentioned is .env file is pointed correctly.
 - Models pulled on the Ollama host: `ollama pull mistral:7b && ollama pull llava:7b`
-- A Telegram bot token from [@BotFather](https://t.me/BotFather) - attached env has the token for bot implemented from the developer side. Modify the .env values as per need.
+- A Telegram bot token from [@BotFather](https://t.me/BotFather) - attached env has the token for bot implemented from the developer side. Modify the .env values as per need. developer bot token id is added to the .env file for validation.
 ### Steps
 
 ```bash
