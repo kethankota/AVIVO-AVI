@@ -5,7 +5,6 @@ from telegram.ext import ContextTypes, ApplicationBuilder, CommandHandler, Messa
 from telegram import Update, ReplyKeyboardRemove
 from bot.handlers import handle_ask, handle_help, handle_image, handle_start, handle_summarize, check_multiple_commands
 
-load_dotenv()
 
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -52,8 +51,8 @@ def main() -> None:
             photo_state: [MessageHandler(filters.PHOTO, handle_image)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
-    ))
-    # app.add_handler(MessageHandler(filters.PHOTO, handle_image))
+        allow_reentry=True
+    )),
     app.add_handler(MessageHandler(
         filters.COMMAND | filters.TEXT, handle_help))
     logger.info("Bot is running. Press Ctrl+C to stop.")

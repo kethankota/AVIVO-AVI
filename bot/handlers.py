@@ -84,10 +84,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         result = await route_image(bytes(image_bytes), user_id, user_hint)
         caption = result["caption"]
         tags = result["tags"]
-        print(user_hint)
-        print(tags)
         reply = f"*Caption:* {caption}\n\n*Tags:* {', '.join(tags)}"
-        print(reply)
         add_to_history(user_id, "image", "[photo]", reply)
         await update.message.reply_markdown(reply)
     except Exception as e:
