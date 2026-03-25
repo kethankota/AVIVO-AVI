@@ -187,35 +187,6 @@ Avivo_docker_final/
 
 ---
 
-## Quick Start — Local (Python)
-
-### Prerequisites
-
-- Working docker setup
-- [Ollama](https://ollama.com) installed and running. Ensure the ollama url and port mentioned is .env file is pointed correctly.
-- Models pulled: `ollama pull mistral:7b && ollama pull llava:7b`
-- A Telegram bot token from [@BotFather](https://t.me/BotFather) - attached env has the token for bot implemented from the developer side. Modify the .env values as per need.
-
-### Steps
-
-```bash
-# 1. Select working directory
-cd Avivo_avi
-```
-```bash
-# 1. Clone the project
-cd Avivo_avi
-```
-
-```bash
-# 1. Clone the project
-cd Avivo_avi
-```
-
-The bot will log `Bot is running. Press Ctrl+C to stop.` when ready.
-
----
-
 ## Quick Start — Docker Compose
 
 ### Prerequisites
@@ -227,17 +198,18 @@ The bot will log `Bot is running. Press Ctrl+C to stop.` when ready.
 ### Steps
 
 ```bash
-# 1. Build and start
-docker compose up --build
+# 1. clone the repository
+git clone git@github.com:kethankota/AVIVO-AVI.git
 
-# To run in the background:
-docker compose up --build -d
+# modify the env file to point to the ollama server and adjust the configurations as well
+# change the current directory
+cd AVIVO-AVI
 
-# View logs
-docker compose logs -f bot
+# run the command to spin up the application
+docker compose up -d --build
 
-# Stop
-docker compose down
+# to Stop
+docker compose down -v --rmi local
 ```
 
 > **Note on Ollama host networking:** If Ollama is on your local machine and the bot runs in Docker, use `host.docker.internal` (macOS/Windows) or your LAN IP (Linux) instead of `localhost` for `OLLAMA_HOST`.
@@ -299,14 +271,7 @@ Bot:  Caption: A serene mountain lake reflects snow-capped peaks under a clear
 ## Adding Knowledge Documents
 
 1. Drop any `.md` or `.txt` files into the `docs/` directory.
-2. Re-run ingestion:
-   ```bash
-   # Local
-   python -m rag.ingest
-
-   # Docker (rebuild triggers ingest automatically)
-   docker compose up --build
-   ```
+2. Re-run the setup
 3. The old `embeddings.db` is dropped and rebuilt from scratch.
 
 > Tip: Keep documents focused. A 3–10 page document per topic gives the retriever clean, high-quality chunks. Avoid mixing unrelated content in a single file.
