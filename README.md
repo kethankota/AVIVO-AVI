@@ -1,4 +1,4 @@
-# AVIVO AVI (Avivo Virtual Intelligence) — Hybrid GenAI Telegram Bot
+# AVI — Hybrid GenAI Telegram Bot
 
 > A Hybrid Telegram bot that combines **Mini-RAG** (document Q&A) and **Vision Captioning** in a single lightweight service, backed by locally-hosted LLMs via Ollama.
 
